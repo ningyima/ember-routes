@@ -6,7 +6,11 @@ export default Route.extend({
 
   actions: {
     favoriteClicked(org) {
-      this.get('favorites').favoriteItem(org);
+      if(this.get('favorites.items').indexOf(org) < 0) {
+        this.get('favorites').favoriteItem(org);
+      } else {
+        this.get('favorites').unfavoriteItem(org);
+      }
     }
   },
 
@@ -26,7 +30,7 @@ export default Route.extend({
         }, {
           id: "facebook"
         }])
-      }, 3000)
+      }, 300)
     })
   }
 });
