@@ -1,10 +1,11 @@
 import Component from '@ember/component';
 import isInArray from 'github-ui-ningyi/utils/is-in-array';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
   tagName: 'li',
 
-  favorites: Ember.inject.service('favorites'),
+  favorites: service('favorites'),
 
   classNames: ['github-org'],
 

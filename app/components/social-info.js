@@ -9,7 +9,6 @@ export default Component.extend({
       this.sendAction('on-links-toggle');
     },
     linksToggled() {
-      console.log("TOGGLED");
       return true;
     }
   }

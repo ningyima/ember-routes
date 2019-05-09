@@ -1,23 +1,18 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  items: [],
+  items: null,
 
-  log() {
-    console.log(
-      this.get('items')
-        .map(x => x.id)
-        .join(', ')
-    );
+  init() {
+    this._super(...arguments);
+    this.set('items', []);
   },
 
   favoriteItem(item) {
     this.get('items').addObject(item);
-    this.log();
   },
 
   unfavoriteItem(item) {
     this.get('items').removeObject(item);
-    this.log();
   }
 });
