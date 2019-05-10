@@ -9,7 +9,7 @@ export default DS.RESTSerializer.extend({
         tlk = pluralize(primaryModelClass.modelName);
         payload = payload.map((rawItem) => {
           rawItem.oldId = rawItem.id;
-          rawItem.id = rawItem.login || rawItem.name;
+          rawItem.id = rawItem.login || rawItem.name || rawItem.title;
           return rawItem;
         });
         break;
