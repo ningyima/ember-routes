@@ -14,7 +14,7 @@ export default Route.extend({
     let orgId = get(this.modelFor('org'), 'login');
     return this.store.queryRecord('repo', {
       orgId,
-      repoId: params.repoId,
+      repoId: params.repoid,
     })
   }
 });

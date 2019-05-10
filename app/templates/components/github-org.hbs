@@ -1,6 +1,6 @@
 {{yield}}
 
-<span {{action "favoriteWasClicked" org}} >
+<a role="button" {{action "favoriteWasClicked" org}} >
   [ {{unless isFavorited "Favorite" "Unfavorite"}} ]
-</span>
+</a>
 {{link-to org.id "org" org.id}}

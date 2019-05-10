@@ -1,7 +1,7 @@
 <h3>{{name}}</h3>
 
 {{#unless isExpanded}}
-  <span {{action "toggleLinkSection"}}>
+  <span role="button" {{action "toggleLinkSection"}}>
     [ Expand ]
   </span>
 {{/unless}}
@@ -11,16 +11,20 @@
     <li>
       Twitter:
       <a href="http://twitter.com/{{twitter}}"
-        target="_blank">@{{twitter}}</a>
+        target="_blank" rel="noopener">
+        @{{twitter}}
+      </a>
     </li>
     <li>
       Github:
       <a href="http://github.com/{{github}}"
-        target="_blank">@{{github}}</a>
+        target="_blank" rel="noopener">
+        @{{github}}
+      </a>
     </li>
   </ul>
 
-  <span {{action "toggleLinkSection"}}>[ Collapse ]</span>
+  <span role="button" {{action "toggleLinkSection"}}>[ Collapse ]</span>
 {{/if}}
 
 {{yield}}

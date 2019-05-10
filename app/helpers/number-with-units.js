@@ -1,11 +1,12 @@
 import { helper } from '@ember/component/helper';
+import { singularize, pluralize } from 'ember-inflector';
 
 export function numberWithUnits(params/*, hash*/) {
   const [qty, unit] = params;
   if(qty === 1) {
-    return `${qty} ${Ember.Inflector.inflector.singularize(unit)}`;
+    return `${qty} ${singularize(unit)}`;
   } else {
-    return `${qty} ${Ember.Inflector.inflector.pluralize(unit)}`;
+    return `${qty} ${pluralize(unit)}`;
   }
 }
 
